@@ -34,7 +34,7 @@ jobs:
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: actions/setup-go@v1
+      #- uses: actions/setup-go@v1
 
         # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
       #- name: Setup Terraform
