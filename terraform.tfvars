@@ -1,1 +1,1 @@
-bucket_name = "flugel-test-20210203"
+bucket_name = "root-850325b70780"
