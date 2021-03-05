@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 	"crypto/tls"
-//	"time"
+	"time"
 
 
 	"github.com/gruntwork-io/terratest/modules/aws"
@@ -44,6 +44,7 @@ func TestTerraformAwsS3Example(t *testing.T) {
 
 	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
+	//terraform.Apply(t, terraformOptions)
 
 	// Run `terraform output` to get the value of an output variable
 	bucketID := terraform.Output(t, terraformOptions, "bucket_id")
@@ -72,7 +73,10 @@ func TestTerraformAwsS3Example(t *testing.T) {
 	//timeBetweenRetries := 5 * time.Second
 
 	//http_helper.HttpGetWithRetry(t,lbIP,&tlsConfig,200,"",maxRetries,timeBetweenRetries)
+	time.Sleep( 150 * time.Second);
+
 	http_helper.HttpGet(t,lb_endpoint,&tlsConfig)
+	
 
 	for i, objectID := range res3 {
 		fmt.Println(i, " => ", objectID)
